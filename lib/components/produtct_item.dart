@@ -24,13 +24,15 @@ class ProdutctItem extends StatelessWidget {
             ),
             leading: IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.favorite),
-              color: Theme.of(context).accentColor,
+              icon: Icon(
+                Icons.favorite,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
             ),
             trailing: IconButton(
               onPressed: () {},
               icon: const Icon(Icons.shopping_cart),
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
           child: Image.network(
