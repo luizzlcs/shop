@@ -4,6 +4,7 @@ import 'package:shop/models/product_provider.dart';
 import 'package:shop/pages/product_detail_page.dart';
 import 'package:shop/pages/products_overview_page.dart';
 import 'package:shop/utils/routes/app_routes.dart';
+import 'package:shop/utils/theme.dart';
 
 void main() {
   runApp(
@@ -20,13 +21,15 @@ class MyApp extends StatelessWidget {
       create: (context) => ProductProvider(),
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-            primarySwatch: Colors.purple,
-            accentColor: Colors.deepOrange,
-            fontFamily: 'Lato'),
-        home: ProductsOverviewPage(),
+        theme: mayTheme.copyWith(
+          colorScheme: mayTheme.colorScheme.copyWith(
+            primary: Colors.deepPurpleAccent,
+            secondary: Colors.deepOrange,
+          ),
+        ),
+        home: const ProductsOverviewPage(),
         debugShowCheckedModeBanner: false,
-        routes: {AppRoutes.PRODUC_DETAIL: (_) => ProductDetailPage()},
+        routes: {AppRoutes.PRODUC_DETAIL: (_) => const ProductDetailPage()},
       ),
     );
   }
