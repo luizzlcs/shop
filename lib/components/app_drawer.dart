@@ -7,6 +7,7 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 230,
       child: Column(
         children: [
           AppBar(
@@ -45,7 +46,6 @@ class AppDrawer extends StatelessWidget {
           ),
         ],
       ),
-      width: 230,
     );
   }
 }

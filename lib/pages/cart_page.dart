@@ -4,8 +4,24 @@ import 'package:shop/components/cart_item_widget.dart';
 import 'package:shop/models/cart.dart';
 import 'package:shop/models/order_list.dart';
 
-class CartPage extends StatelessWidget {
+class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
+
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    Provider.of<OrderList>(
+      context,
+      listen: false,
+    ).loadOrders();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
