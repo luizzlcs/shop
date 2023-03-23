@@ -47,18 +47,28 @@ class _OrderWidgetState extends State<OrderWidget> {
                           (product) => Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                product.name,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                              const SizedBox(
+                                width: 10,
+                                child: Text('📌'),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              SizedBox(
+                                width: 200,
+                                child: Text(
+                                  product.name,
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      overflow: TextOverflow.fade),
                                 ),
                               ),
                               Text(
                                 '${product.quantity} x '
                                 'R\$ ${product.price}',
                                 style: const TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   color: Colors.grey,
                                 ),
                               ),
